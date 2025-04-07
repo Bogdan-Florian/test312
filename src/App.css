@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Basic reset-ish */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Container for the form */
+.form-container {
+  width: 100%;
+  padding: 2rem 5%;
+  box-sizing: border-box;
+}
+
+/* File upload container */
+.upload-container {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* A single 'card' for each field */
+.field-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Field title styling */
+.field-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Each row is label + input side by side */
+.field-row {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.field-row label {
+  flex: 1 1 200px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.field-row input {
+  flex: 3 1 300px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* The checkboxes in a small row */
+.checkbox-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
+.checkbox-group input {
+  margin-right: 0.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Submit button container */
+.submit-container {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.submit-container button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.submit-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive: stack fields on smaller screens */
+@media (max-width: 768px) {
+  .field-row {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .field-row label,
+  .field-row input {
+    flex: 1 1 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
